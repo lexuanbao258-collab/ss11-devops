@@ -1,0 +1,139 @@
+{
+  "checks": [
+    {
+      "name": "Certbot script: bash -n",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "bai-01-reverse-proxy: nginx -t",
+      "status": "PASS",
+      "detail": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful"
+    },
+    {
+      "name": "bai-02-api-gateway: nginx -t",
+      "status": "PASS",
+      "detail": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful"
+    },
+    {
+      "name": "bai-04-nginx-optimization: nginx -t",
+      "status": "PASS",
+      "detail": "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok\nnginx: configuration file /etc/nginx/nginx.conf test is successful"
+    },
+    {
+      "name": "HTTPS goc: loi thieu chung chi du kien",
+      "status": "PASS",
+      "detail": "2026/10/12 04:55:33 [emerg] 1#1: cannot load certificate \"/etc/letsencrypt/live/api.my-ecommerce.com/fullchain.pem\": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/letsencrypt/live/api.my-ecommerce.com/fullchain.pem, r) error:10000080:BIO routines::no such file)\nnginx: [emerg] cannot load certificate \"/etc/letsencrypt/live/api.my-ecommerce.com/fullchain.pem\": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/letsencrypt/live/api.my-ecommerce.com/fullchain.pem, r) error:10000080:BIO routines::no such file)\nnginx: configuration file /etc/nginx/nginx.conf test failed"
+    },
+    {
+      "name": "Bai 1: frontend, URI va header",
+      "status": "PASS",
+      "detail": "{\"port\": 3000, \"uri\": \"/products?q=1\", \"headers\": {\"Host\": \"shop.test\", \"X-Real-IP\": \"172.17.0.1\", \"X-Forwarded-For\": \"172.17.0.1\", \"Accept-Encoding\": \"identity\", \"User-Agent\": \"Python-urllib/3.14\"}}"
+    },
+    {
+      "name": "Bai 1: upstream dung -> 502",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 2: /api/orders?limit=2",
+      "status": "PASS",
+      "detail": "{\"port\": 8080, \"uri\": \"/api/orders?limit=2\", \"headers\": {\"Host\": \"shop.test\", \"X-Real-IP\": \"172.17.0.1\", \"X-Forwarded-For\": \"198.51.100.10, 172.17.0.1\", \"X-Forwarded-Proto\": \"http\", \"Accept-Encoding\": \"identity\", \"User-Agent\": \"Python-urllib/3.14\"}}"
+    },
+    {
+      "name": "Bai 2: /cart",
+      "status": "PASS",
+      "detail": "{\"port\": 3000, \"uri\": \"/cart\", \"headers\": {\"Host\": \"shop.test\", \"X-Real-IP\": \"172.17.0.1\", \"X-Forwarded-For\": \"198.51.100.10, 172.17.0.1\", \"X-Forwarded-Proto\": \"http\", \"Accept-Encoding\": \"identity\", \"User-Agent\": \"Python-urllib/3.14\"}}"
+    },
+    {
+      "name": "Bai 2: /api -> 301 /api/",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 3: nginx -t ban tam bo TLS (kiem tra mot phan)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 3: redirect 301 giu URI",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 3: proxy backend tren ban tam HTTP port 443",
+      "status": "PASS",
+      "detail": "{\"port\": 8080, \"uri\": \"/api/orders?q=1\", \"headers\": {\"Host\": \"api.my-ecommerce.com\", \"X-Real-IP\": \"172.17.0.1\", \"X-Forwarded-For\": \"172.17.0.1\", \"X-Forwarded-Proto\": \"http\", \"Accept-Encoding\": \"identity\", \"User-Agent\": \"Python-urllib/3.14\"}}"
+    },
+    {
+      "name": "Bai 4: gzip css",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'text/css', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-804\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: gzip txt",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'text/plain', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-800\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: gzip js",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'application/javascript', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-804\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: gzip json",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'application/json', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-80e\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: gzip xml",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'application/xml', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-811\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: gzip html",
+      "status": "PASS",
+      "detail": "{'Server': 'nginx/1.30.5', 'Date': 'Mon, 12 Oct 2026 04:55:42 GMT', 'Content-Type': 'text/html', 'Last-Modified': 'Mon, 12 Oct 2026 04:55:41 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Vary': 'Accept-Encoding', 'ETag': 'W/\"6acc684d-816\"', 'Content-Encoding': 'gzip'}"
+    },
+    {
+      "name": "Bai 4: khong nen khi client khong yeu cau",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 4: khong nen response nho hon 1024",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 4: body 10485760 bytes",
+      "status": "PASS",
+      "detail": "HTTP 405"
+    },
+    {
+      "name": "Bai 4: body 10485761 bytes",
+      "status": "PASS",
+      "detail": "HTTP 413"
+    },
+    {
+      "name": "Bai 4: nginx -t truoc reload",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 4: reload trong container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Bai 4: request sau reload",
+      "status": "PASS",
+      "detail": ""
+    }
+  ],
+  "https_limit": "Khong co chung chi: chua xac minh TLS/Let's Encrypt/gia han.",
+  "nginx_version": "nginx version: nginx/1.30.5",
+  "nginx_image_id": "sha256:9bf97bd7714f5e24c1ccd545ecb9eb5435cb6d109c97cebb15e7e455e0239edb",
+  "xml_fixture": "Mime mapping tam: xml -> application/xml; image mac dinh dung text/xml.",
+  "checked_at_utc": "2026-10-12T04:55:43Z"
+}
